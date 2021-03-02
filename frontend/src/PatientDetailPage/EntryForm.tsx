@@ -49,8 +49,8 @@ const HealthCheckEntryForm: React.FC<Props> = ({ onSubmit, diagnoses }) => {
       then: Yup.string().min(3, 'Name too short').required('Field is required')
     }),
     sickLeave: Yup.object({
-      startDate: Yup.date().required('Field is missing'),
-      endDate: Yup.date().required('Field is missing')
+      startDate: Yup.date(),
+      endDate: Yup.date()
     }),
     discharge: Yup.object().when('type', {
       is: 'Hospital',
@@ -88,7 +88,7 @@ const HealthCheckEntryForm: React.FC<Props> = ({ onSubmit, diagnoses }) => {
           <Form className="form ui">
             <UiForm.Field>
               <label>type</label>
-              <Field name="type" component="select" onChange={handleReset}>
+              <Field name="type" component="select">
                 <option value="Hospital">Hospital</option>
                 <option value="HealthCheck">HealthCheck</option>
                 <option value="OccupationalHealthcare">OccupationalHealthcare</option>
@@ -171,6 +171,10 @@ const HealthCheckEntryForm: React.FC<Props> = ({ onSubmit, diagnoses }) => {
               type="submit"
               color="green"
               disabled={!dirty || !isValid}>Add</Button>
+            <Button
+            type="reset"
+            color="grey"
+            onClick={handleReset}>Reset</Button>
           </Form>
         );
       }}

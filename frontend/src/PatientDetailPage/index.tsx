@@ -5,7 +5,7 @@ import { HospitalEntry, Patient } from '../types';
 import { apiBaseUrl } from "../constants";
 import { useStateValue, updatePatient, addEntry } from "../state";
 import EntryDetails from '../EntryDetails';
-import HealthCheckEntryForm, { EntryFormValues } from './HealthCheckEntryForm';
+import HealthCheckEntryForm, { EntryFormValues } from './EntryForm';
 
 
 const PatientDetailPage: React.FC<{ id: string }> = ({ id }) => {
