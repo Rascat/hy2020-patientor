@@ -1,0 +1,36 @@
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Test Name",
+  "dateOfBirth": "01.01.1990",
+  "ssn": "123456789",
+  "gender": "male",
+  "occupation": "Cook"
+}
+
+###
+
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Test Name",
+  "dateOfBirth": "01.01.1990",
+  "ssn": "123456789",
+  "gender": "male"
+  //"occupation": "Cook"
+}
+
+###
+
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Test Name",
+  "dateOfBirth": "not-a-date",
+  "ssn": "123456789",
+  "gender": "male",
+  "occupation": "Cook"
+}
